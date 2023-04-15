@@ -16,8 +16,8 @@ function handleDel(id){
 	<h1>Task Lists</h1>
 	<ul>
 		<button onClick={()=> setShow(!show)}> toggle</button>
-		{show && tasks.map((task,index) =>(
-			<li key={index}>
+		{show && tasks.map((task) =>(
+			<li key={task.id}>
 
 				<span>{task.name}</span>- <span>{task.id}</span>
 				<button className="del" onClick={()=>handleDel(task.id)}>delete </button> 
