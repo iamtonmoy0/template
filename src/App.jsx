@@ -7,6 +7,9 @@ const [tasks,setTask]=useState([
 	{id:1011,name:"a2",passed:true},
 	{id:11010,name:"b",passed:false}
 ])
+function handleDel(id){
+	setTask(tasks.filter(task=>id!==task.id))
+}
 	return (
 	<div className="App">
 	<h1>Task Lists</h1>
@@ -15,7 +18,7 @@ const [tasks,setTask]=useState([
 			<li key={index}>
 
 				<span>{task.name}</span>- <span>{task.id}</span>
-				<button>delete </button>
+				<button className="del" onClick={()=>handleDel(task.id)}>delete </button> 
 			</li>
 		))}
 		</ul>	
