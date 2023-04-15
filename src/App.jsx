@@ -4,7 +4,7 @@ export const App=()=>{
 	const [count,setCount]=useState(0)
 	
 	function handle(){
-	setCount(count+1)
+	setCount(count=>count+3)
 	}
 	return (
 	<div className="App">
