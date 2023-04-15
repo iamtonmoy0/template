@@ -1,18 +1,24 @@
 import { useState } from "react";
+import './App.css'
 
 export const App=()=>{
-	const [count,setCount]=useState(0)
-	
-	function handle(){
-	setCount(count=>count+3)
-	}
+const [tasks,setTask]=useState([
+	{id:1010,name:"ab",passed:false},
+	{id:1011,name:"a2",passed:true},
+	{id:11010,name:"b",passed:false}
+])
 	return (
 	<div className="App">
-		<div className="box">
-			<p>{count}</p>
-			<button className="a" onClick={handle}>Add</button>
+	<h1>Task Lists</h1>
+	<ul>
+		{tasks.map((task,index) =>(
+			<li key={index}>
 
-		</div>
+				<span>{task.name}</span>- <span>{task.id}</span>
+				<button>delete </button>
+			</li>
+		))}
+		</ul>	
 	</div>
 	);
 }
